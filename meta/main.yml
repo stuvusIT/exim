@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Fritz Otlinghaus
-  description: This role installs and configure exims
+  description: This role installs and configures exims
   company: stuvus (https://stuvus.uni-stuttgart.de)
 
   license: CC-BY-SA
@@ -9,6 +9,7 @@ galaxy_info:
   min_ansible_version: 2.4
 
   platforms:
+    - name: Debian
     - name: Ubuntu
       versions:
         - xenial

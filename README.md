@@ -9,6 +9,7 @@ This role only needs an apt based system e.g. Ubuntu
 ## Role Variables
 Every section relates to similar named section in a normal [exim configuration](https://www.exim.org/exim-html-current/doc/html/spec_html/index.html).
 This is the reason why there is no description for these section.
+Every variable should be set to a multiline string.
 
 | Variable                     | Default / Mandatory |
 |------------------------------|---------------------|

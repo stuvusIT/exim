@@ -1,0 +1,63 @@
+# {{ ansible_managed }}
+#
+
+######################################################################
+#                     LOCAL VARIABLE SETTINGS                        #
+######################################################################
+
+{{ exim_local_section }}
+
+######################################################################
+#                     MAIN CONFIGURATION SETTINGS                    #
+######################################################################
+
+{{ exim_main_section }}
+
+######################################################################
+#                     ACL CONFIGURATION                              #
+######################################################################
+
+begin acl
+
+{{ exim_acls_section | default("") | indent( width=8, indentfirst=True) }}
+
+######################################################################
+#                     ROUTERS CONFIGURATION                          #
+######################################################################
+
+begin routers
+
+{{ exim_router_section | default("") | indent( width=8, indentfirst=True) }}
+
+######################################################################
+#                     TRANSPORTS CONFIGURATION                       #
+######################################################################
+
+begin transports
+
+{{ exim_transport_section | default("") | indent( width=8, indentfirst=True) }}
+
+######################################################################
+#                     AUTHENTICATORS CONFIGURATION                   #
+######################################################################
+
+begin authenticators
+
+{{ exim_authenticator_section | default("") | indent( width=8, indentfirst=True) }}
+
+######################################################################
+#                     REWRITE CONFIGURATION                          #
+######################################################################
+
+begin rewrite
+
+{{ exim_rewrite_section | default("") | indent( width=8, indentfirst=True) }}
+
+######################################################################
+#                     RETRY CONFIGURATION                          #
+######################################################################
+
+begin retry
+
+{{ exim_retry_section | default("") | indent( width=8, indentfirst=True) }}
+

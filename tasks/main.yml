@@ -1,0 +1,9 @@
+---
+- name: Install exim
+  apt:
+    name: exim4-daemon-heavy
+
+- name: Place exim config
+  template:
+    src: exim.conf.j2
+    dest: /etc/exim4/exim4.conf

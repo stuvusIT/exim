@@ -7,3 +7,11 @@
   template:
     src: exim.conf.j2
     dest: /etc/exim4/exim4.conf
+  notify: Enable and reload exim4
+
+- name: Enable and start exim4
+  service:
+    name: exim4
+    state: started
+    enabled: yes
+

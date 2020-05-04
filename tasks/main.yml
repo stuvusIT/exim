@@ -1,11 +1,9 @@
 ---
-- name: Install exim
+- name: Install exim and spfquery
   apt:
-    name: exim4-daemon-heavy
-
-- name: Install spfquery
-  apt:
-    name: spfquery
+    name:
+      - exim4-daemon-heavy
+      - spfquery
 
 - name: Place exim config
   template:

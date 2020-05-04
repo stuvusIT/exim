@@ -3,6 +3,10 @@
   apt:
     name: exim4-daemon-heavy
 
+- name: Install spfquery
+  apt:
+    name: spfquery
+
 - name: Place exim config
   template:
     src: exim.conf.j2

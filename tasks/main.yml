@@ -9,11 +9,24 @@
   template:
     src: exim.conf.j2
     dest: /etc/exim4/exim4.conf
-  notify: Enable and reload exim4
+  notify: Reload exim4
+
+- name: Create exim_ansible_role directory
+  file:
+    path: /etc/exim_ansible_role
+    state: directory
+
+- name: Place extra files
+  copy: "{{ extra_file | combine({ 'dest': '/etc/exim_ansible_role/' + extra_file.dest }) }}"
+  loop: "{{ exim_extra_files | default([]) }}"
+  loop_control:
+    loop_var: extra_file
+  notify: Reload exim4
+
+- meta: flush_handlers
 
 - name: Enable and start exim4
   service:
     name: exim4
     state: started
     enabled: yes
-
